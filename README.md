@@ -41,4 +41,5 @@ I am still a student, my experience in programming is self-taught but I study IT
 - Syntax highlighting
 - Autocomplete with history
 - Useful aliases
+- Command autosuggestions and help with ```[TAB```
 
