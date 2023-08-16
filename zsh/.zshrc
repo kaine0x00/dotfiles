@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+export GPG_TTY=$TTY
 # Path to your oh-my-zsh installation.
   export ZSH=~/.oh-my-zsh
 
@@ -8,7 +8,8 @@
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="pixegami-agnoster"
-
+#I-beam cursor shape
+echo '\e[5 q'
 # Git integration
 # Load version control information
 autoload -Uz vcs_info
@@ -111,3 +112,6 @@ alias h="cd ~"
 alias v="/home/danny/nvim.appimage ."
 alias ssd="cd ~/ssd"
 alias ghidra="sudo /home/danny/ghidra_10.3.2/ghidraRun"
+alias t="tmux a"
+alias tn="tmux"
+alias cl="clear"
