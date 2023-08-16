@@ -55,4 +55,6 @@ return require('packer').startup(function(use)
     use('nvim-tree/nvim-web-devicons')
     -- Tmux integration
     use('christoomey/vim-tmux-navigator')
+    -- Practice Vim Motions with :VimBeGood (must be on empty file for it to work)
+    use('ThePrimeagen/vim-be-good')
 end)
