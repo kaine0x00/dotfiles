@@ -53,5 +53,6 @@ return require('packer').startup(function(use)
     -- Tree
     use('nvim-tree/nvim-tree.lua')
     use('nvim-tree/nvim-web-devicons')
-
+    -- Tmux integration
+    use('christoomey/vim-tmux-navigator')
 end)
