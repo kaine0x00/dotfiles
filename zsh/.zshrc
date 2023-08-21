@@ -21,7 +21,7 @@ precmd() {
 zstyle ':vcs_info:git:*' formats '󰘬 %b %m%u%c'
 
 PROMPT='%(?.%F{207}%1~%f%B> %b.%F{red}error:%? )'
-RPROMPT='%F{55}~%f %F{40}${vcs_info_msg_0_}%f'
+RPROMPT='%F{55}%~%f %F{40}${vcs_info_msg_0_}%f'
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
