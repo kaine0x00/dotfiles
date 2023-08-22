@@ -21,7 +21,6 @@ I am still a student, my experience in programming is self-taught but I study IT
 
 - Frontend development
 - JavaScript (will need it further in school)
-- Upload of automization scripts as bonus content (I have many, just have to clean them upp and make them more general purpose)
 - List of dependencies and programs needed for a complete experience
 
 ## Neovim Features
@@ -35,6 +34,11 @@ I am still a student, my experience in programming is self-taught but I study IT
 - Mason plugin management
 - Nvim tree for file navigation with nice simple icons
 - Undotree with physical backup on system dirs
+- Added tmux configuration and neovim compatibility (move between panels with C-vim movement motions hjkl)
+
+### Neovim AppImage
+
+For stability, I have uploaded the version of nvim I use. This way, i ensure that if you use this version (v9.1.x) it will be compatible with my configurations
 
 ## Terminal Features (ZSH)
 
@@ -43,5 +47,5 @@ I am still a student, my experience in programming is self-taught but I study IT
 - Syntax highlighting
 - Autocomplete with history
 - Useful aliases
-- Command autosuggestions and help with ```[TAB```
+- Command autosuggestions and help with ```[TAB]```
 
