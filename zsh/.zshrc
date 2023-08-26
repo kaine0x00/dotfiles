@@ -107,7 +107,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias dev="cd ~/ssd/Dev"
+alias dev="cd ~/ssd/dev"
 alias h="cd ~"
 alias v="/home/danny/nvim.appimage ."
 alias ssd="cd ~/ssd"
