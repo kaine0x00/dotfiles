@@ -20,7 +20,7 @@ precmd() {
 # Format the vcs_info_msg_0_ variable
 zstyle ':vcs_info:git:*' formats '󰘬 %b %m%u%c'
 
-PROMPT='%(?.%F{207}%1~%f%B> %b.%F{red}error:%? )'
+PROMPT='%(?.%F{207}%1~%f%B> %b.%F{red}error:%f%? )'
 RPROMPT='%F{55}%~%f %F{40}${vcs_info_msg_0_}%f'
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -107,7 +107,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias dev="cd ~/ssd/dev"
+alias dev="cd ~/ssd/Dev"
 alias h="cd ~"
 alias v="/home/danny/nvim.appimage ."
 alias ssd="cd ~/ssd"
