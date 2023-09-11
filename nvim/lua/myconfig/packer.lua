@@ -57,4 +57,6 @@ return require('packer').startup(function(use)
     use('christoomey/vim-tmux-navigator')
     -- Practice Vim Motions with :VimBeGood (must be on empty file for it to work)
     use('ThePrimeagen/vim-be-good')
+    -- auto closing brackets
+    use('jiangmiao/auto-pairs')
 end)

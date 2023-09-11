@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/danny/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["auto-pairs"] = {
+    loaded = true,
+    path = "/home/danny/.local/share/nvim/site/pack/packer/start/auto-pairs",
+    url = "https://github.com/jiangmiao/auto-pairs"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/danny/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
