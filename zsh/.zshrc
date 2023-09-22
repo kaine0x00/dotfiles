@@ -1,8 +1,11 @@
 # If you come from bash you might have to change your $PATH.
+#path to java installation
+export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
+export PATH=$PATH:$JAVA_HOME/bin
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export GPG_TTY=$TTY
 # Path to your oh-my-zsh installation.
-  export ZSH=~/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -110,6 +113,7 @@ source $ZSH/oh-my-zsh.sh
 alias dev="cd ~/ssd/Dev"
 alias h="cd ~"
 alias v="/home/danny/nvim.appimage ."
+alias vv="/home/danny/nvim.appimage"
 alias ssd="cd ~/ssd"
 alias ghidra="sudo /home/danny/ghidra_10.3.2/ghidraRun"
 alias t="tmux a"
