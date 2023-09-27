@@ -1,4 +1,4 @@
-# Dannyrobrom's dotfiles
+# Kainé's dotfiles
 
 ![](./screenshot.jpeg)
 
