@@ -1,4 +1,5 @@
 local lsp = require("lsp-zero")
+local lspconfig = require("lspconfig")
 
 lsp.preset("recommended")
 
@@ -10,7 +11,8 @@ lsp.ensure_installed({
   'marksman',
   'omnisharp',
   'pyre',
-  'pylsp'
+  'pylsp',
+  'html'
 })
 
 lsp.nvim_workspace()
@@ -55,7 +57,7 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
 end)
 lsp.setup()
-
+lspconfig.html.setup({})
 vim.diagnostic.config({
     virtual_text = false
 })
