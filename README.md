@@ -15,13 +15,12 @@ I am still a student, my experience in programming is self-taught but I study IT
 - Currently Learning C# and integrating to NVIM
 - NeoVim as main editor
 - Assembly and RE with Ghidra
+- Frontend development
 - Git
 
 ### Future integrations
 
-- Frontend development
 - JavaScript (will need it further in school)
-- List of dependencies and programs needed for a complete experience
 
 ## Neovim Features
 
@@ -35,6 +34,7 @@ I am still a student, my experience in programming is self-taught but I study IT
 - Nvim tree for file navigation with nice simple icons
 - Undotree with physical backup on system dirs
 - Added tmux configuration and neovim compatibility (move between panels with C-vim movement motions hjkl)
+- Auto closing of brackets, cruly braces, quotation and more
 
 ### Neovim AppImage
 
