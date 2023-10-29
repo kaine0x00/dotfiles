@@ -42,10 +42,9 @@ For stability, I have uploaded the version of nvim I use. This way, i ensure tha
 
 ## Terminal Features (ZSH)
 
-- Simple effective prompt
+- Elegant streamline prompt
 - Git integration
 - Syntax highlighting
 - Autocomplete with history
 - Useful aliases
 - Command autosuggestions and help with ```[TAB]```
-
