@@ -6,7 +6,6 @@ lsp.preset("recommended")
 lsp.ensure_installed({
   'rust_analyzer',
   'clangd',
-  'csharp_ls',
   'lua_ls',
   'marksman',
   'omnisharp',
@@ -57,7 +56,7 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
 end)
 lsp.setup()
-lspconfig.html.setup({})
+
 vim.diagnostic.config({
     virtual_text = false
 })

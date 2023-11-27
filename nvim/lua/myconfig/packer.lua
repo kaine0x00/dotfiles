@@ -59,4 +59,6 @@ return require('packer').startup(function(use)
     use('ThePrimeagen/vim-be-good')
     -- auto closing brackets
     use('jiangmiao/auto-pairs')
+    -- colouring hex codes
+    use('brenoprata10/nvim-highlight-colors')
 end)
