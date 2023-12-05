@@ -1,0 +1,39 @@
+theme = "custom1"
+client_id = "df44516c6b474a35962bb0d99e5a9b65"
+client_port = 8080
+playback_format = """
+{track} • {artists} 󰝚 {album}
+{metadata}
+/ᐠ - ˕ -マ 🐈🐰 ૮₍ ˃ ⤙ ˂ ₎ა
+❤︎⋆｡‧˚ʚ🌸ɞ˚‧｡⋆❤︎
+"""
+tracks_playback_limit = 50
+app_refresh_duration_in_ms = 32
+playback_refresh_duration_in_ms = 0
+page_size_in_rows = 20
+track_table_item_max_len = 32
+play_icon = "▶"
+pause_icon = "▌▌"
+liked_icon = "♥"
+border_type = "Rounded"
+progress_bar_type = "Line"
+playback_window_position = "Top"
+playback_window_width = 6
+enable_media_control = true
+enable_streaming = true
+enable_cover_image_cache = true
+default_device = "spotify-player"
+
+[copy_command]
+command = "xclip"
+args = [
+    "-sel",
+    "c",
+]
+
+[device]
+name = "spotify-player"
+device_type = "speaker"
+volume = 50
+bitrate = 160
+audio_cache = false
