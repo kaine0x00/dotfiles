@@ -23,7 +23,7 @@ precmd() {
 # Format the vcs_info_msg_0_ variable
 zstyle ':vcs_info:git:*' formats '󰘬 %b %m%u%c'
 
-PROMPT='%(?.%F{207}%1~%f%B> %b.%F{red}error:%f%? )'
+PROMPT='%(?.%F{93}% kaine0x00%f@%F{207}%1~%f%B> %b.%F{red}error:%f%? )'
 RPROMPT='%F{55}%~%f %F{40}${vcs_info_msg_0_}%f'
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -121,3 +121,10 @@ alias tn="tmux"
 alias cl="clear"
 alias mvnc="/home/danny/ssd/Dev/Scripts/single_monitor.sh"
 alias spl="spotify_player"
+alias fman="compgen -c | fzf | xargs man"
+alias tman="compgen -c | fzf | xargs tldr"
+alias storageuse="du -ah . | sort -hr | head -n 10"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
