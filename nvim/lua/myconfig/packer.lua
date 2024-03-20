@@ -61,4 +61,8 @@ return require('packer').startup(function(use)
     use('jiangmiao/auto-pairs')
     -- colouring hex codes
     use('brenoprata10/nvim-highlight-colors')
+    -- copilot
+    use('github/copilot.vim')
+    -- fancy word wrap 
+    -- use({ "andrewferrier/wrapping.nvim", config = function() require("wrapping").setup() end, })
 end)

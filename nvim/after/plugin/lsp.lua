@@ -25,7 +25,6 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-M-k>'] = cmp.mapping.scroll_docs(-4),
     ['<C-M-j>'] = cmp.mapping.scroll_docs(4),
-
 })
 
 lsp.setup_nvim_cmp({
