@@ -63,11 +63,12 @@ return require('packer').startup(function(use)
     use('brenoprata10/nvim-highlight-colors')
     -- copilot
     use('github/copilot.vim')
-    -- fancy word wrap
-    -- use({ "andrewferrier/wrapping.nvim", config = function() require("wrapping").setup() end, })
-    --
+    -- rusttt
+    use('simrat39/rust-tools.nvim')
     -- Debugging with DAP
     use('mfussenegger/nvim-dap')
+    use('rcarriga/nvim-dap-ui')
+    use('nvim-neotest/nvim-nio')
     -- DAP for python
     use('mfussenegger/nvim-dap-python')
 end)
