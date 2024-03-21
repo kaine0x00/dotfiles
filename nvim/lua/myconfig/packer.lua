@@ -30,14 +30,14 @@ return require('packer').startup(function(use)
         branch = 'v2.x',
         requires = {
             -- LSP Support
-            { 'neovim/nvim-lspconfig' },   -- Required
-            { 'williamboman/mason.nvim' }, -- Optional
+            { 'neovim/nvim-lspconfig' },             -- Required
+            { 'williamboman/mason.nvim' },           -- Optional
             { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
             -- Autocompletion
 
             { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-            { 'L3MON4D3/LuaSnip' }, -- Required
+            { 'L3MON4D3/LuaSnip' },     -- Required
         }
     }
     -- Mason
@@ -63,6 +63,11 @@ return require('packer').startup(function(use)
     use('brenoprata10/nvim-highlight-colors')
     -- copilot
     use('github/copilot.vim')
-    -- fancy word wrap 
+    -- fancy word wrap
     -- use({ "andrewferrier/wrapping.nvim", config = function() require("wrapping").setup() end, })
+    --
+    -- Debugging with DAP
+    use('mfussenegger/nvim-dap')
+    -- DAP for python
+    use('mfussenegger/nvim-dap-python')
 end)

@@ -30,6 +30,19 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- Open the terminal
 vim.keymap.set("n", "<leader>tt", vim.cmd.terminal)
+-- VimTree
+vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeToggle)
+vim.keymap.set("n", "<leader>tr", vim.cmd.NvimTreeFocus)
+-- DAP
+vim.keymap.set('n', '<F5>', require 'dap'.continue)
+vim.keymap.set('n', '<F10>', require 'dap'.step_over)
+vim.keymap.set('n', '<F11>', require 'dap'.step_into)
+vim.keymap.set('n', '<F12>', require 'dap'.step_out)
+vim.keymap.set('n', '<leader>b', require 'dap'.toggle_breakpoint)
+-- git
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+-- undotree
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 -- copilot
 vim.keymap.set('i', '<C-p>', 'copilot#Accept("\\<CR>")', {
     expr = true,
