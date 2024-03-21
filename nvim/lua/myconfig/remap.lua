@@ -38,7 +38,7 @@ vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 -- undotree
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 -- copilot
-vim.keymap.set('i', '<C-p>', 'copilot#Accept("\\<CR>")', {
+vim.keymap.set('i', '<C-;>', 'copilot#Accept("\\<CR>")', {
     expr = true,
     replace_keycodes = false
 })
