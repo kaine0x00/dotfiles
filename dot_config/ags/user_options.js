@@ -49,7 +49,7 @@ let userConfigOptions = {
         'dateFormat': "%d/%m", // On notif time
     },
     'weather': {
-        'city': "",
+        'city': "Valencia",
     },
     'workspaces': {
         'shown': 10,
