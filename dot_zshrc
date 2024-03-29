@@ -5,7 +5,6 @@ export PATH=$PATH:$JAVA_HOME/bin
 export GPG_TTY=$TTY
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
-
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -24,6 +23,7 @@ zstyle ':vcs_info:git:*' formats '󰘬 %b %m%u%c'
 
 PROMPT='%(?.%F{165} 󰣇 %f %F{93}% kaine0x00%f@%F{207}%1~%f%B> %b.%F{red}error:%f%? )'
 RPROMPT='%F{55}%~%f %F{40}${vcs_info_msg_0_}%f'
+
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
@@ -88,12 +88,12 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 #
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+#Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 #
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -122,12 +122,14 @@ alias blackarchmodules="pacman -Sgg | grep blackarch | awk '{print \$1}' | sort 
 alias vim="nvim"
 alias blackarchinstall="/ssd/dev/Scripts/blackarchmodule.sh"
 alias cat="bat"
+alias ccat="/usr/bin/cat"
 alias ll="eza --git -l"
 alias lsr="eza --git --tree -l"
 alias la="eza --git -la"
 alias cd="z"
 alias msfvenp="/ssd/dev/Scripts/msfvenp.sh"
-
+alias explain"gh copilot explain"
+alias suggest="gh copilot suggest -t shell"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -135,5 +137,140 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
+
+# Github auto-generated aliases
+
+ghcs() {
+	FUNCNAME="$funcstack[1]"
+	TARGET="shell"
+	local GH_DEBUG="$GH_DEBUG"
+
+	read -r -d '' __USAGE <<-EOF
+	Wrapper around \`gh copilot suggest\` to suggest a command based on a natural language description of the desired output effort.
+	Supports executing suggested commands if applicable.
+
+	USAGE
+	 $FUNCNAME [flags] <prompt>
+
+	FLAGS
+	 -d, --debug              Enable debugging
+	 -h, --help               Display help usage
+	 -t, --target target      Target for suggestion; must be shell, gh, git
+	                          default: "$TARGET"
+
+	EXAMPLES
+
+	- Guided experience
+	 $ $FUNCNAME
+
+	- Git use cases
+	 $ $FUNCNAME -t git "Undo the most recent local commits"
+	 $ $FUNCNAME -t git "Clean up local branches"
+	 $ $FUNCNAME -t git "Setup LFS for images"
+
+	- Working with the GitHub CLI in the terminal
+	 $ $FUNCNAME -t gh "Create pull request"
+	 $ $FUNCNAME -t gh "List pull requests waiting for my review"
+	 $ $FUNCNAME -t gh "Summarize work I have done in issues and pull requests for promotion"
+
+	- General use cases
+	 $ $FUNCNAME "Kill processes holding onto deleted files"
+	 $ $FUNCNAME "Test whether there are SSL/TLS issues with github.com"
+	 $ $FUNCNAME "Convert SVG to PNG and resize"
+	 $ $FUNCNAME "Convert MOV to animated PNG"
+	EOF
+
+	local OPT OPTARG OPTIND
+	while getopts "dht:-:" OPT; do
+		if [ "$OPT" = "-" ]; then     # long option: reformulate OPT and OPTARG
+			OPT="${OPTARG%%=*}"       # extract long option name
+			OPTARG="${OPTARG#"$OPT"}" # extract long option argument (may be empty)
+			OPTARG="${OPTARG#=}"      # if long option argument, remove assigning `=`
+		fi
+
+		case "$OPT" in
+			debug | d)
+				GH_DEBUG=api
+				;;
+
+			help | h)
+				echo "$__USAGE"
+				return 0
+				;;
+
+			target | t)
+				TARGET="$OPTARG"
+				;;
+		esac
+	done
+
+	# shift so that $@, $1, etc. refer to the non-option arguments
+	shift "$((OPTIND-1))"
+
+	TMPFILE="$(mktemp -t gh-copilotXXX)"
+	trap 'rm -f "$TMPFILE"' EXIT
+	if GH_DEBUG="$GH_DEBUG" gh copilot suggest -t "$TARGET" "$@" --shell-out "$TMPFILE"; then
+		if [ -s "$TMPFILE" ]; then
+			FIXED_CMD="$(cat $TMPFILE)"
+			print -s "$FIXED_CMD"
+			echo
+			eval "$FIXED_CMD"
+		fi
+	else
+		return 1
+	fi
+}
+
+ghce() {
+	FUNCNAME="$funcstack[1]"
+	local GH_DEBUG="$GH_DEBUG"
+
+	read -r -d '' __USAGE <<-EOF
+	Wrapper around \`gh copilot explain\` to explain a given input command in natural language.
+
+	USAGE
+	 $FUNCNAME [flags] <command>
+
+	FLAGS
+	 -d, --debug   Enable debugging
+	 -h, --help    Display help usage
+
+	EXAMPLES
+
+	# View disk usage, sorted by size
+	$ $FUNCNAME 'du -sh | sort -h'
+
+	# View git repository history as text graphical representation
+	$ $FUNCNAME 'git log --oneline --graph --decorate --all'
+
+	# Remove binary objects larger than 50 megabytes from git history
+	$ $FUNCNAME 'bfg --strip-blobs-bigger-than 50M'
+	EOF
+
+	local OPT OPTARG OPTIND
+	while getopts "dh-:" OPT; do
+		if [ "$OPT" = "-" ]; then     # long option: reformulate OPT and OPTARG
+			OPT="${OPTARG%%=*}"       # extract long option name
+			OPTARG="${OPTARG#"$OPT"}" # extract long option argument (may be empty)
+			OPTARG="${OPTARG#=}"      # if long option argument, remove assigning `=`
+		fi
+
+		case "$OPT" in
+			debug | d)
+				GH_DEBUG=api
+				;;
+
+			help | h)
+				echo "$__USAGE"
+				return 0
+				;;
+		esac
+	done
+
+	# shift so that $@, $1, etc. refer to the non-option arguments
+	shift "$((OPTIND-1))"
+
+	GH_DEBUG="$GH_DEBUG" gh copilot explain "$@"
+}
 
 export PATH="$PATH:/home/kaine/.local/bin"
