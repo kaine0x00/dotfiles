@@ -71,4 +71,6 @@ return require('packer').startup(function(use)
     use('nvim-neotest/nvim-nio')
     -- DAP for python
     use('mfussenegger/nvim-dap-python')
+    -- mdx syntax highlighting
+    use('davidmh/mdx.nvim')
 end)

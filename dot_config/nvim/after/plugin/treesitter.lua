@@ -1,3 +1,12 @@
+vim.filetype.add({
+  extension = {
+    mdx = 'mdx'
+  }
+})
+
+local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
+ft_to_parser.mdx = "markdown"
+
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
   ensure_installed = { "c", "python", "cpp", "c_sharp", "rust", "lua", "vim", "vimdoc", "query", "bash" },
