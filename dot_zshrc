@@ -73,11 +73,7 @@ RPROMPT='%F{55}%~%f %F{40}${vcs_info_msg_0_}%f'
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  zsh-syntax-highlighting
-  zsh-autosuggestions
-)
+plugins=( git zsh-syntax-highlighting zsh-autosuggestions command-not-found ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -137,7 +133,6 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
-eval "$(ssh-agent -s)"
 
 # Github auto-generated aliases
 
