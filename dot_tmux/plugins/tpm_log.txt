@@ -1,0 +1,12 @@
+[2024-04-21 01:52:44.581]	 List of discovered tpm plugins: tmux-plugins/tmux-sensible christoomey/vim-tmux-navigator tmux-plugins/tmux-yank wfxr/tmux-power
+[2024-04-21 01:52:44.604]	 Invoking /home/kaine/.tmux/plugins/tpm/bin/install_plugins
+[2024-04-21 01:52:44.678]	 Installing "tmux-power"
+[2024-04-21 01:52:44.680]	 Installing "tmux-sensible"
+[2024-04-21 01:52:44.680]	 Installing "tmux-yank"
+[2024-04-21 01:52:44.680]	 Installing "vim-tmux-navigator"
+[2024-04-21 01:52:45.454]	   "vim-tmux-navigator" download success
+[2024-04-21 01:52:45.497]	   "tmux-power" download success
+[2024-04-21 01:52:45.503]	   "tmux-sensible" download success
+[2024-04-21 01:52:46.491]	   "tmux-yank" download success
+[2024-04-21 01:52:46.526]	 Done.
+
