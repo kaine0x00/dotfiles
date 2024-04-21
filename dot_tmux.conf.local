@@ -371,6 +371,16 @@ tmux_conf_copy_to_os_clipboard=false
 
 # this is the place to override or undo settings
 
+# window navigation
+unbind n
+unbind p
+# Shift Alt vim keys to switch windows
+# Shift Alt vim keys to switch windows
+bind -n M-H previous-window
+bind -n M-H previous-window
+bind -n M-L next-window
+bind -n M-L next-window
+
 # increase history size
 #set -g history-limit 10000
 
