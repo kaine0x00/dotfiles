@@ -13,11 +13,6 @@
 #   - true
 #   - false (default)
 tmux_conf_preserve_stock_bindings=false
-
-unbind C-b
-set -g prefix C-Space
-bind C-Space send-prefix
-
 # -- session creation ----------------------------------------------------------
 
 # prompt for session name when creating a new session, possible values are:
