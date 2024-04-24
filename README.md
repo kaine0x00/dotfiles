@@ -1,7 +1,5 @@
 # Kainé's dotfiles
 
-![](./screenshot.jpeg)
-
 ## About me
 
 I am still a student, my experience in programming is self-taught but I study IT in school. I'm very passionate about computer science and many of its fields interest me. I aim towards becoming a Full Stack developer, but also heavily consider cybersecurity as another carreer option. My main OS is linux, debian based.
