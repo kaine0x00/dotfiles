@@ -19,7 +19,7 @@ precmd() {
     vcs_info
 }
 # Format the vcs_info_msg_0_ variable
-zstyle ':vcs_info:git:*' formats 'í®í¸¬ %b %m%u%c'
+zstyle ':vcs_info:git:*' formats '%b %m%u%c'
 
 PROMPT='%(?.%F{165}%f %F{93}% kaine0x00%f@%F{207}%1~%f%B> %b.%F{red}error:%f%? )'
 RPROMPT='%F{55}%~%f %F{40}${vcs_info_msg_0_}%f'
