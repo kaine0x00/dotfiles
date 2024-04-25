@@ -1,5 +1,5 @@
 -- copilot
-vim.keymap.set('i', '<C-;>', 'copilot#Accept("\\<CR>")', {
+vim.keymap.set('i', '<C-y>', 'copilot#Accept("\\<CR>")', {
     expr = true,
     replace_keycodes = false
 })
