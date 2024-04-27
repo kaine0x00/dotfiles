@@ -128,7 +128,7 @@ alias lsr="eza --git --tree -l"
 alias la="eza --git -la"
 alias cd="z"
 alias msfvenp="/data/scripts/msfvenp.sh"
-alias vpninit="/data/scripts/vpninit.sh"
+alias vpninit="sudo /data/scripts/vpninit.sh"
 alias explain"gh copilot explain"
 alias suggest="gh copilot suggest -t shell"
 alias backitup='sudo rsync -aAXv --delete --exclude={"/var/log/*","/var/tmp/*","*cache*","*/logs/*","*/log/*","log/*"} /home/kaine/ /etc/ /var/ /data/ /ssd/sync/arch/'
