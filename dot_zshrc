@@ -5,6 +5,8 @@ export PATH=$PATH:$JAVA_HOME/bin
 export GPG_TTY=$TTY
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
+# Scripts path
+export PATH=$PATH:/data/scripts
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -20,8 +22,7 @@ precmd() {
 }
 # Format the vcs_info_msg_0_ variable
 zstyle ':vcs_info:git:*' formats '%b %m%u%c'
-
-PROMPT='%(?.%F{165}%f %F{93}% kaine0x00%f@%F{207}%1~%f%B> %b.%F{red}error:%f%? )'
+PROMPT='%(?.%F{165} 󰣇 %f %F{93}% kaine0x00%f@%F{207}%1~%f%B> %b.%F{red}error:%f%? )'
 RPROMPT='%F{55}%~%f %F{40}${vcs_info_msg_0_}%f'
 
 # Set list of themes to load
