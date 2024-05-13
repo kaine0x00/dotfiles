@@ -59,3 +59,26 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true
 })
+
+local virtual_text_enabled = true  -- This holds the current state of virtual text
+
+function ToggleVirtualText()
+    virtual_text_enabled = not virtual_text_enabled  -- Toggle the state
+    local clients = vim.lsp.get_active_clients()
+    if #clients < 1 then return end  -- If no LSP clients are active, do nothing
+
+    if virtual_text_enabled then
+        -- Enable virtual text
+        vim.diagnostic.config({
+            virtual_text = true,
+        })
+    else
+        -- Disable virtual text
+        vim.diagnostic.config({
+            virtual_text = false,
+        })
+    end
+end
+
+vim.api.nvim_set_keymap('n', '<leader>vt', '<cmd>lua ToggleVirtualText()<CR>', {noremap = true, silent = true})
+
