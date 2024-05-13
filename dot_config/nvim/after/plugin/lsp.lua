@@ -9,7 +9,6 @@ lsp.ensure_installed({
   'lua_ls',
   'marksman',
   'omnisharp',
-  'pyre',
   'pylsp',
   'html'
 })
