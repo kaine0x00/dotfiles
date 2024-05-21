@@ -26,3 +26,4 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
+vim.cmd("set guifont=JetBrainsMono\\ Nerd\\ Font:h18")
