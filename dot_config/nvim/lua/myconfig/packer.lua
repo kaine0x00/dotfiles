@@ -73,4 +73,6 @@ return require('packer').startup(function(use)
     use('mfussenegger/nvim-dap-python')
     -- mdx syntax highlighting
     use('davidmh/mdx.nvim')
+    -- indentation lines
+    use('lukas-reineke/indent-blankline.nvim')
 end)
